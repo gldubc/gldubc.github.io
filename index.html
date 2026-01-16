@@ -20,101 +20,100 @@
 <!-- About / CV Section (comes first in DOM for CSS sibling trick) -->
 <section id="about" class="page">
     <div class="about-container">
-        <div class="profile-header">
+        <header class="profile-header">
             <img src="assets/avatar.jpg" alt="Guillaume Duboc" class="avatar">
-            <div>
+            <div class="profile-info">
                 <h1>Guillaume Duboc</h1>
-                <h2>PhD Student at <a href="https://dashbit.co/">Dashbit</a>+<a href="https://www.irif.fr/">IRIF</a></h2>
-                <h4>Paris, France</h4>
+                <h2>PhD Student at <a href="https://dashbit.co/">Dashbit</a> + <a href="https://www.irif.fr/">IRIF</a></h2>
+                <p class="location">Paris, France</p>
                 <p class="bio">I am working on set-theoretic type systems for dynamic languages such as Elixir.</p>
-                <ul id="menu">
-                    <li><a href="mailto:guillaume.duboc@irif.fr" target="_blank">email</a></li>
-                    <li><a href="https://github.com/gldubc" target="_blank">github</a></li>
-                    <li><a href="https://www.linkedin.com/in/guillaume-duboc-52342b98/" target="_blank">linkedin</a></li>
-                </ul>
+                <nav class="social-links">
+                    <a href="mailto:guillaume.duboc@irif.fr" target="_blank">email</a>
+                    <a href="https://github.com/gldubc" target="_blank">github</a>
+                    <a href="https://www.linkedin.com/in/guillaume-duboc-52342b98/" target="_blank">linkedin</a>
+                </nav>
             </div>
-        </div>
+        </header>
 
-        <h3>Talks</h3>
-        <ul>    
-            <li>2023</li>
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/watch?v=eBzoZWgZ334" target="_blank">
-                        The Design Principles of the Elixir Type System</a>
-                    <br/>
-                    <span class="venue">Code BEAM 2023</span>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/watch?v=gJJH7a2J9O8&t=0s" target="_blank">
-                        Bringing Types to Elixir</a>
-                    <br/>
-                    <span class="venue">ElixirConf 2023</span>
-                </li>
-            </ul>
-        </ul>
+        <section class="cv-section">
+            <h3>Publications</h3>
+            <div class="entries">
+                <article class="entry">
+                    <span class="entry-year">2024</span>
+                    <div class="entry-content">
+                        <a href="https://arxiv.org/pdf/2408.14345" target="_blank" class="entry-title">
+                            Guard Analysis and Safe Erasure Gradual Typing: a Type System for Elixir</a>
+                        <p class="entry-authors">Giuseppe Castagna, Guillaume Duboc</p>
+                        <span class="entry-venue">arXiv pre-print</span>
+                    </div>
+                </article>
+                <article class="entry has-award">
+                    <span class="entry-year">2023</span>
+                    <div class="entry-content">
+                        <a href="https://www.irif.fr/_media/users/gduboc/elixir-types.pdf" target="_blank" class="entry-title">
+                            The Design Principles of the Elixir Type System</a>
+                        <p class="entry-authors">Giuseppe Castagna, Guillaume Duboc, José Valim</p>
+                        <span class="entry-venue">The Art, Science, and Engineering of Programming</span>
+                        <span class="award">Best Paper of the Year</span>
+                    </div>
+                </article>
+                <article class="entry">
+                    <span class="entry-year">2023</span>
+                    <div class="entry-content">
+                        <a href="https://hal.science/hal-04406407/document" target="_blank" class="entry-title">
+                            Un prototype de système de types graduels ensemblistes pour Elixir</a>
+                        <p class="entry-authors">Guillaume Duboc</p>
+                        <span class="entry-venue">JFLA</span>
+                    </div>
+                </article>
+                <article class="entry has-award">
+                    <span class="entry-year">2021</span>
+                    <div class="entry-content">
+                        <a href="https://dl.acm.org/doi/10.1145/3473569" target="_blank" class="entry-title">
+                            An existential crisis resolved: Type inference for first-class existential types</a>
+                        <p class="entry-authors">Richard Eisenberg, Guillaume Duboc, Stephanie Weirich, Daniel Lee</p>
+                        <span class="entry-venue">Proceedings of the ACM on Programming Languages</span>
+                        <span class="award">Distinguished Paper</span>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <h3>Publications</h3>
-        <ul>
-            <li>2024</li>
-            <ul>
-                <li>
-                    Giuseppe Castagna, Guillaume Duboc
-                    <br/>
-                    <a href="https://arxiv.org/pdf/2408.14345" target="_blank">
-                        Guard Analysis and Safe Erasure Gradual Typing: a Type System for Elixir</a>
-                    <br/>
-                    <span class="venue">arXiv pre-print</span>
-                </li>
-            </ul>
-            <li>2023</li>
-            <ul>
-                <li>
-                    Giuseppe Castagna, Guillaume Duboc, José Valim
-                    <br/>
-                    <a href="https://www.irif.fr/_media/users/gduboc/elixir-types.pdf" target="_blank">
-                        The Design Principles of the Elixir Type System</a>
-                    <br/>
-                    <span class="venue">The Art, Science, and Engineering of Programming 
-                        - Best Paper of the Year Award</span>
-                </li>
-                <li>
-                    Guillaume Duboc
-                    <br/>
-                    <a href="https://hal.science/hal-04406407/document" target="_blank">
-                        Un prototype de système de types graduels ensemblistes pour Elixir</a>
-                    <br/>
-                    <span class="venue">JFLA</span>
-                </li>
-            </ul>
-            <li>2021</li>
-            <ul>
-                <li>
-                    Richard Eisenberg, Guillaume Duboc, Stephanie Weirich and Daniel Lee
-                    <br/>
-                    <a href="https://dl.acm.org/doi/10.1145/3473569" target="_blank">
-                        An existential crisis resolved: Type inference for first-class existential types
-                    </a>
-                    <br/>
-                    <span class="venue">Proceedings of the ACM on Programming Languages 
-                        - Distinguished Paper Award</span>
-                </li>
-            </ul>
-        </ul>
+        <section class="cv-section">
+            <h3>Talks</h3>
+            <div class="entries">
+                <article class="entry">
+                    <span class="entry-year">2023</span>
+                    <div class="entry-content">
+                        <a href="https://www.youtube.com/watch?v=eBzoZWgZ334" target="_blank" class="entry-title">
+                            The Design Principles of the Elixir Type System</a>
+                        <span class="entry-venue">Code BEAM 2023</span>
+                    </div>
+                </article>
+                <article class="entry">
+                    <span class="entry-year">2023</span>
+                    <div class="entry-content">
+                        <a href="https://www.youtube.com/watch?v=gJJH7a2J9O8&t=0s" target="_blank" class="entry-title">
+                            Bringing Types to Elixir</a>
+                        <span class="entry-venue">ElixirConf 2023</span>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <h3>Projects</h3>
-        <ul>
-            <li>
-                <a href="https://typex.fly.dev/" target="_blank">Elixir Type Checker</a>
-                <br/>
-                A (prototype) type checker for Elixir based on set-theoretic type systems.
-            </li>
-            <li>
-                <a href="https://www.irif.fr/_media/users/gduboc/these-frisch-eng.pdf" target="_blank">Alain Frisch's Thesis</a>
-                <br/>
-                A while ago, I translated Alain Frisch's thesis on CDuce.
-            </li>
-        </ul>
+        <section class="cv-section">
+            <h3>Projects</h3>
+            <div class="projects-grid">
+                <a href="https://typex.fly.dev/" target="_blank" class="project-card">
+                    <span class="project-title">Elixir Type Checker</span>
+                    <p class="project-desc">A prototype type checker for Elixir based on set-theoretic type systems.</p>
+                </a>
+                <a href="https://www.irif.fr/_media/users/gduboc/these-frisch-eng.pdf" target="_blank" class="project-card">
+                    <span class="project-title">Alain Frisch's Thesis</span>
+                    <p class="project-desc">English translation of Alain Frisch's thesis on CDuce.</p>
+                </a>
+            </div>
+        </section>
     </div>
 </section>
 
