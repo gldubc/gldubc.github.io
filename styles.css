@@ -95,25 +95,8 @@ a:hover {
     text-decoration: none;
 }
 
-/* Active tab styling based on :target */
-.tab[href="#defense"] {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
-:target ~ .tabs .tab[href="#defense"],
-#about:target ~ .tabs .tab[href="#defense"] {
-    color: #888;
-    border-bottom-color: transparent;
-}
-
-#about:target ~ .tabs .tab[href="#about"] {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
 /* ============================================
-   PAGE SECTIONS - CSS-only tab switching
+   PAGE SECTIONS - Pure CSS tab switching
    ============================================ */
 
 .page {
@@ -121,23 +104,38 @@ a:hover {
     flex: 1;
 }
 
-/* Default: show defense page when no hash or #defense */
+/* Default state: show defense, highlight defense tab */
 #defense {
     display: block;
 }
 
-/* When #about is targeted, hide defense and show about */
+#tab-defense {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* When #about is targeted: show about, hide defense */
 #about:target {
     display: block;
 }
 
-#about:target ~ #defense,
-#defense:has(~ #about:target) {
+#about:target ~ #defense {
     display: none;
 }
 
-/* Fallback for browsers without :has() - use sibling selector trick */
-/* The sections are reordered in HTML: about comes before defense */
+/* Tab highlighting when #about is active */
+body:has(#about:target) #tab-defense {
+    color: #888;
+    border-bottom-color: transparent;
+}
+
+body:has(#about:target) #tab-about {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Fallback for Safari <15.4 - use adjacent sibling from nav perspective */
+/* This works because :target changes what's "active" */
 
 /* ============================================
    DEFENSE PAGE
