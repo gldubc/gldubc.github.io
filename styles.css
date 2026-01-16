@@ -414,10 +414,10 @@ body:has(#about:target) #tab-about {
 .profile-header {
     display: flex;
     align-items: flex-start;
-    gap: 2.5em;
-    padding-bottom: 2.5em;
+    gap: 2em;
+    padding-bottom: 1.8em;
     border-bottom: 1px solid #eee;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 
 .avatar {
@@ -448,14 +448,14 @@ body:has(#about:target) #tab-about {
     font-size: calc(var(--fs) * 0.38);
     color: #888;
     letter-spacing: 0.03em;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
 }
 
 .bio {
     font-size: calc(var(--fs) * 0.5);
     line-height: 1.5;
     color: #555;
-    margin-bottom: 1.2em;
+    margin-bottom: 0.8em;
 }
 
 .social-links {
@@ -481,15 +481,15 @@ body:has(#about:target) #tab-about {
 
 /* CV Sections */
 .cv-section {
-    margin-bottom: 2.5em;
+    margin-bottom: 1.8em;
 }
 
 .cv-section h3 {
     font-family: minipax-bold;
     font-size: calc(var(--fs) * 0.55);
     color: #2b2b2b;
-    margin-bottom: 1.2em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
     border-bottom: 2px solid var(--accent);
     display: inline-block;
 }
@@ -498,40 +498,38 @@ body:has(#about:target) #tab-about {
 .entries {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 0;
+    border-top: 1px solid #e5e5e5;
 }
 
 .entry {
     display: grid;
-    grid-template-columns: 4em 1fr;
-    gap: 1.5em;
-    padding: 1.2em 1.5em;
-    background: #fafafa;
-    border-radius: 8px;
-    border-left: 3px solid transparent;
-    transition: all 0.2s ease;
+    grid-template-columns: 4.5em 1fr;
+    gap: 1em;
+    padding: 1em 0;
+    border-bottom: 1px solid #e5e5e5;
+    background: transparent;
 }
 
 .entry:hover {
-    background: #f5f5f5;
+    background: rgba(0, 0, 0, 0.015);
 }
 
 .entry.has-award {
-    border-left-color: var(--accent);
-    background: linear-gradient(135deg, rgba(107, 68, 35, 0.03), rgba(212, 165, 116, 0.05));
+    background: linear-gradient(90deg, rgba(107, 68, 35, 0.04), transparent 50%);
 }
 
 .entry-year {
-    font-family: minipax-regular;
+    font-family: minipax-bold;
     font-size: calc(var(--fs) * 0.4);
-    color: #999;
-    padding-top: 0.15em;
+    color: var(--accent);
+    padding-top: 0.1em;
 }
 
 .entry-content {
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.2em;
 }
 
 .entry-title {
@@ -566,54 +564,53 @@ body:has(#about:target) #tab-about {
     font-size: calc(var(--fs) * 0.32);
     color: var(--accent);
     background: linear-gradient(135deg, rgba(107, 68, 35, 0.1), rgba(212, 165, 116, 0.15));
-    padding: 0.3em 0.8em;
+    padding: 0.25em 0.7em;
     border-radius: 3px;
-    margin-top: 0.5em;
+    margin-top: 0.3em;
     width: fit-content;
 }
 
-/* Projects Grid */
+/* Projects List */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid #e5e5e5;
 }
 
 .project-card {
     display: block;
-    padding: 1.5em;
-    background: #fafafa;
-    border-radius: 8px;
-    border: 1px solid #eee;
+    padding: 1em 0;
+    border-bottom: 1px solid #e5e5e5;
+    background: transparent;
     text-decoration: none;
     font-style: normal;
     transition: all 0.2s ease;
 }
 
 .project-card:hover {
-    background: #f5f5f5;
-    border-color: var(--accent-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    background: rgba(0, 0, 0, 0.015);
     text-decoration: none;
 }
 
 .project-title {
-    font-family: minipax-bold;
-    font-size: calc(var(--fs) * 0.45);
-    color: #2b2b2b;
+    font-family: happy-times;
+    font-size: calc(var(--fs) * 0.48);
+    font-style: italic;
+    color: #5D5C5C;
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 .project-card:hover .project-title {
     color: var(--accent);
+    text-decoration: underline;
 }
 
 .project-desc {
     font-size: calc(var(--fs) * 0.38);
     color: #666;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* ============================================
@@ -661,14 +658,11 @@ body:has(#about:target) #tab-about {
     justify-content: center;
   }
   .entry {
-    grid-template-columns: 1fr;
-    gap: 0.3em;
+    grid-template-columns: 3.5em 1fr;
+    gap: 0.8em;
   }
   .entry-year {
-    font-size: calc(var(--fs) * 0.35);
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
+    font-size: calc(var(--fs) * 0.38);
   }
 }
 
@@ -694,7 +688,9 @@ body:has(#about:target) #tab-about {
     height: 120px;
   }
   .entry {
-    padding: 1em;
+    padding: 0.8em 0;
+    grid-template-columns: 3em 1fr;
+    gap: 0.6em;
   }
 }
 
