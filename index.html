@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <title>Guillaume Duboc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -12,6 +11,94 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
+<!-- Landing / Announcement Section -->
+<section class="landing">
+    <div class="announcement-badge">PhD Defense</div>
+    <h1 class="thesis-title">Typing Dynamic Languages with Set-Theoretic Types: The Case of Elixir</h1>
+    
+    <div class="defense-info">
+        <div class="info-block">
+            <span class="info-label">When</span>
+            <span class="info-value">Monday, January 19, 2026 — 1:30 PM</span>
+        </div>
+        <div class="info-block">
+            <span class="info-label">Where</span>
+            <span class="info-value">IRIF, Turing Amphitheater<br>
+            <span class="info-detail">8 place Aurélie Nemours, 75013 Paris<br>Basement of the Sophie Germain building</span></span>
+        </div>
+    </div>
+
+    <div class="jury-section">
+        <h2 class="section-label">Jury</h2>
+        <div class="jury-grid">
+            <div class="jury-member">
+                <span class="jury-name">Didier Rémy</span>
+                <span class="jury-role">Reviewer</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">Éric Tanter</span>
+                <span class="jury-role">Reviewer</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">Annette Bieniusa</span>
+                <span class="jury-role">Examiner</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">Mariangiola Dezani</span>
+                <span class="jury-role">Examiner</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">Ben Greenman</span>
+                <span class="jury-role">Examiner</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">Giuseppe Castagna</span>
+                <span class="jury-role">Thesis Director</span>
+            </div>
+            <div class="jury-member">
+                <span class="jury-name">José Valim</span>
+                <span class="jury-role">Co-supervisor, Elixir Creator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="links-section">
+        <a href="https://www.irif.fr/_media/users/gduboc/duboc-phd-thesis-typing-elixir.pdf" target="_blank" class="cta-link">
+            <span class="cta-icon">📄</span> Read the Manuscript
+        </a>
+        <div class="remote-info">
+            <span class="remote-label">Remote Access</span>
+            <a href="https://u-paris.zoom.us/j/4186117566?pwd=03xbZa5ufPaTLAkmcoGqMi0XyZqino.1&omn=88508256697" target="_blank" class="zoom-link">Join via Zoom</a>
+            <span class="zoom-code">Code: 722301</span>
+        </div>
+    </div>
+
+    <details class="abstract-section">
+        <summary>Abstract</summary>
+        <div class="abstract-content">
+            <p>Adding static types to dynamic languages requires balancing expressiveness, safety, and backward compatibility. These trade-offs often limit the practical adoption of type systems. This thesis presents a gradual type system for Elixir grounded in set-theoretic types, where types denote sets of values and support union, intersection, and negation operations.</p>
+            
+            <p>The central hypothesis is that set-theoretic types are particularly well-suited for capturing the programming patterns of dynamic languages. Union types reflect the branching nature of dynamic programs; intersection types express data flow and function overloading; negation types enable precise analysis of pattern matching by excluding values captured by preceding branches.</p>
+            
+            <p>A key challenge is articulating gradual typing with semantic subtyping. We represent gradual types as intervals bounded below by the precise static type of all known values and above by the dynamic type of all possible values, enabling fine-grained tracking of type information at the boundaries between typed and untyped code.</p>
+            
+            <p>On the theoretical side, we present a safe-erasure gradual typing discipline exploiting runtime checks already in the Erlang VM, an extensive typed analysis of pattern matching, and an extension of semantic subtyping to handle Elixir's data structures. To prevent the unchecked spread of dynamic types, we introduce strong function refinements, a crucial aspect for maintaining type safety in a gradually typed system.</p>
+            
+            <p>On the practical side, we address implementation within the Elixir compiler. We present efficient algorithms and data structures for type operations, evaluate compilation performance, and document design choices that minimize overhead while preserving expressiveness, constituting a guide for language implementers seeking to integrate gradual set-theoretic types into dynamic languages.</p>
+        </div>
+    </details>
+
+    <a href="#main" class="scroll-indicator">
+        <span>About me</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+    </a>
+</section>
+
+<!-- Main Content -->
+<main id="main">
 <div style="display: flex; align-items: center;">
     <img src="assets/avatar.jpg" alt="Guillaume Duboc" style="margin-right: 20px; border-radius: 50%;" width="200" height="200">
     <div>
@@ -108,10 +195,6 @@
         A while ago, I translated Alain Frisch's thesis on CDuce.
     </li>
 </ul>
-<!-- <h3>Related</h3>
-<ul>
-    <li><a href="https://www.irif.fr/~gc/" target="_blank">Giuseppe Castagna</a></li>
-</ul> -->
+</main>
 </body>
 </html>
-

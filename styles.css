@@ -34,7 +34,8 @@ body {
   font-family: happy-times;
   line-height: 1;
   color: #2b2b2b;
-  margin: 40px 54px;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -51,6 +52,314 @@ a:hover {
 :root {
   --fs: 44px;
   --lh: 1.18181818;
+  --accent: #6B4423;
+  --accent-light: #D4A574;
+  --bg-warm: #FAF7F2;
+}
+
+/* ============================================
+   LANDING SECTION
+   ============================================ */
+
+.landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    background: var(--bg-warm);
+    background-image: 
+        radial-gradient(ellipse at 20% 30%, rgba(107, 68, 35, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
+    text-align: center;
+    position: relative;
+}
+
+.announcement-badge {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.4);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: linear-gradient(135deg, rgba(107, 68, 35, 0.08), rgba(212, 165, 116, 0.12));
+    padding: 0.6em 1.4em;
+    border-radius: 2em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(107, 68, 35, 0.15);
+}
+
+.thesis-title {
+    font-family: minipax-bold;
+    font-size: calc(var(--fs) * 1.1);
+    line-height: 1.25;
+    max-width: 900px;
+    margin-bottom: 2.5em;
+    color: #1a1a1a;
+}
+
+.defense-info {
+    display: flex;
+    gap: 4em;
+    margin-bottom: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.info-label {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.info-value {
+    font-family: happy-times;
+    font-size: calc(var(--fs) * 0.6);
+    line-height: 1.5;
+    color: #2b2b2b;
+}
+
+.info-detail {
+    font-size: calc(var(--fs) * 0.45);
+    color: #666;
+    display: block;
+    margin-top: 0.3em;
+}
+
+/* Jury Section */
+.jury-section {
+    margin-bottom: 3em;
+    max-width: 800px;
+}
+
+.section-label {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5em;
+}
+
+.jury-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em 2em;
+}
+
+.jury-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8em 1.2em;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(107, 68, 35, 0.08);
+}
+
+.jury-name {
+    font-family: happy-times;
+    font-size: calc(var(--fs) * 0.5);
+    color: #2b2b2b;
+}
+
+.jury-role {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.3);
+    color: #888;
+    margin-top: 0.3em;
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 3em;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: minipax-bold;
+    font-size: calc(var(--fs) * 0.45);
+    font-style: normal;
+    color: white;
+    background: var(--accent);
+    padding: 0.8em 1.8em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.cta-link:hover {
+    background: #5a3a1d;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 68, 35, 0.25);
+}
+
+.cta-icon {
+    font-style: normal;
+}
+
+.remote-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+    padding: 1em 1.5em;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border: 1px dashed rgba(107, 68, 35, 0.2);
+}
+
+.remote-label {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.zoom-link {
+    font-family: happy-times;
+    font-size: calc(var(--fs) * 0.45);
+}
+
+.zoom-code {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.35);
+    color: #666;
+}
+
+/* Abstract Section */
+.abstract-section {
+    max-width: 700px;
+    text-align: left;
+    margin-bottom: 3em;
+}
+
+.abstract-section summary {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    cursor: pointer;
+    padding: 0.8em 1.2em;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    border: 1px solid rgba(107, 68, 35, 0.1);
+    transition: all 0.2s ease;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.abstract-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.abstract-section summary::after {
+    content: '▼';
+    font-size: 0.6em;
+    transition: transform 0.2s ease;
+}
+
+.abstract-section[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.abstract-section summary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(107, 68, 35, 0.2);
+}
+
+.abstract-content {
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 6px 6px;
+    border: 1px solid rgba(107, 68, 35, 0.1);
+    border-top: none;
+    margin-top: -1px;
+}
+
+.abstract-content p {
+    font-family: happy-times;
+    font-size: calc(var(--fs) * 0.42);
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.abstract-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--accent);
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.35);
+    font-style: normal;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 2em;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.scroll-indicator svg {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+main {
+    padding: 40px 54px;
+    background: white;
 }
 
 h1,
@@ -85,7 +394,7 @@ ul {
     padding-left: 0.75em;
 }
 
-p {
+main > p {
   margin-top: calc(var(--fs) * var(--lh) * 0.45);
   margin-bottom: calc(var(--fs) * var(--lh) * 0.25);
   font-size: calc(var(--fs) * 0.6);
@@ -139,12 +448,19 @@ h5 {
     font-family: minipax-bold;
 }
 
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
 @media screen and (max-width: 1100px) {
   :root {
     --fs: 32px;
   }
-  body {
-    margin: 30px 44px;
+  main {
+    padding: 30px 44px;
+  }
+  .landing {
+    padding: 40px 30px;
   }
 }
 
@@ -152,8 +468,21 @@ h5 {
   :root {
     --fs: 30px;
   }
-  body {
-    margin: 22px 34px;
+  main {
+    padding: 22px 34px;
+  }
+  .defense-info {
+    gap: 2em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .defense-info {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  .jury-grid {
+    gap: 0.8em;
   }
 }
 
@@ -161,8 +490,14 @@ h5 {
   :root {
     --fs: 28px;
   }
-  body {
-    margin: 12px 20px;
+  main {
+    padding: 12px 20px;
+  }
+  .landing {
+    padding: 30px 20px;
+  }
+  .thesis-title {
+    font-size: calc(var(--fs) * 0.9);
   }
 }
 
@@ -170,8 +505,11 @@ h5 {
   :root {
     --fs: 28px;
   }
-  body {
-    margin: 8px 15px;
+  main {
+    padding: 8px 15px;
+  }
+  .landing {
+    padding: 20px 15px;
   }
 }
 
@@ -179,8 +517,8 @@ h5 {
   :root {
     --fs: 2.444444444vw;
   }
-  body {
-    margin: 2.2222222222vw 3vw;
+  main {
+    padding: 2.2222222222vw 3vw;
   }
 }
 
