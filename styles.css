@@ -37,6 +37,10 @@
   --bg-warm: #FAF7F2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: happy-times;
   line-height: 1;
@@ -91,13 +95,25 @@ a:hover {
     text-decoration: none;
 }
 
-.tab.active {
+/* Active tab styling based on :target */
+.tab[href="#defense"] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+:target ~ .tabs .tab[href="#defense"],
+#about:target ~ .tabs .tab[href="#defense"] {
+    color: #888;
+    border-bottom-color: transparent;
+}
+
+#about:target ~ .tabs .tab[href="#about"] {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
 
 /* ============================================
-   PAGE SECTIONS
+   PAGE SECTIONS - CSS-only tab switching
    ============================================ */
 
 .page {
@@ -105,9 +121,23 @@ a:hover {
     flex: 1;
 }
 
-.page.active {
+/* Default: show defense page when no hash or #defense */
+#defense {
     display: block;
 }
+
+/* When #about is targeted, hide defense and show about */
+#about:target {
+    display: block;
+}
+
+#about:target ~ #defense,
+#defense:has(~ #about:target) {
+    display: none;
+}
+
+/* Fallback for browsers without :has() - use sibling selector trick */
+/* The sections are reordered in HTML: about comes before defense */
 
 /* ============================================
    DEFENSE PAGE
