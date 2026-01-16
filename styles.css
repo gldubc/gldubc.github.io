@@ -1,4 +1,4 @@
-/* Reset styles */
+/* Reset & Fonts */
 
 @font-face {
   font-family: minipax-bold;
@@ -29,13 +29,22 @@
   box-sizing: border-box;
 }
 
-/* HTML5 display-role reset for older browsers */
+:root {
+  --fs: 44px;
+  --lh: 1.18181818;
+  --accent: #6B4423;
+  --accent-light: #D4A574;
+  --bg-warm: #FAF7F2;
+}
+
 body {
   font-family: happy-times;
   line-height: 1;
   color: #2b2b2b;
   margin: 0;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -49,31 +58,76 @@ a:hover {
   color: #2b2b2b;
 }
 
-:root {
-  --fs: 44px;
-  --lh: 1.18181818;
-  --accent: #6B4423;
-  --accent-light: #D4A574;
-  --bg-warm: #FAF7F2;
+/* ============================================
+   TABS NAVIGATION
+   ============================================ */
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.4);
+    font-style: normal;
+    letter-spacing: 0.05em;
+    color: #888;
+    padding: 1.2em 2em;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+.tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
 /* ============================================
-   LANDING SECTION
+   PAGE SECTIONS
    ============================================ */
 
-.landing {
-    min-height: 100vh;
+.page {
+    display: none;
+    flex: 1;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ============================================
+   DEFENSE PAGE
+   ============================================ */
+
+#defense {
+    background: var(--bg-warm);
+    background-image: 
+        radial-gradient(ellipse at 20% 30%, rgba(107, 68, 35, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
+}
+
+.defense-container {
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
-    background: var(--bg-warm);
-    background-image: 
-        radial-gradient(ellipse at 20% 30%, rgba(107, 68, 35, 0.03) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
     text-align: center;
-    position: relative;
 }
 
 .announcement-badge {
@@ -148,6 +202,7 @@ a:hover {
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 1.5em;
+    font-weight: normal;
 }
 
 .jury-grid {
@@ -250,7 +305,6 @@ a:hover {
 .abstract-section {
     max-width: 700px;
     text-align: left;
-    margin-bottom: 3em;
 }
 
 .abstract-section summary {
@@ -314,129 +368,100 @@ a:hover {
     margin-bottom: 0;
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    color: var(--accent);
-    font-family: minipax-regular;
-    font-size: calc(var(--fs) * 0.35);
-    font-style: normal;
-    letter-spacing: 0.05em;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-    text-decoration: none;
-    margin-top: auto;
-    padding-top: 2em;
-}
-
-.scroll-indicator:hover {
-    opacity: 1;
-    text-decoration: none;
-}
-
-.scroll-indicator svg {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(6px);
-    }
-    60% {
-        transform: translateY(3px);
-    }
-}
-
 /* ============================================
-   MAIN CONTENT
+   ABOUT PAGE
    ============================================ */
 
-main {
-    padding: 40px 54px;
-    background: white;
+#about {
+    background: #fff;
 }
 
-h1,
-h3,
-p,
-ul,
-li {
+.about-container {
+    padding: 40px 54px;
+    max-width: 1200px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.bio {
+    margin-top: calc(var(--fs) * var(--lh) * 0.45);
+    margin-bottom: calc(var(--fs) * var(--lh) * 0.25);
+    font-size: calc(var(--fs) * 0.6);
+}
+
+/* About page typography */
+.about-container h1,
+.about-container h3,
+.about-container ul,
+.about-container li {
   font-size: calc(var(--fs) * 0.90);
   line-height: var(--lh);
   font-weight: normal;
 }
 
-h1 {
+.about-container h1 {
     font-family: minipax-bold;
     margin-bottom: calc(var(--fs) * var(--lh) * 0.20);
 }
 
-h2 {
+.about-container h2 {
   font-size: calc(var(--fs) * 0.85);
   line-height: var(--lh);
   font-weight: normal;
+  margin-bottom: calc(var(--fs) * var(--lh) * 0.15);
 }
 
-h3{
+.about-container h3 {
   margin-top: calc(var(--fs) * var(--lh) * 0.45);
   margin-bottom: calc(var(--fs) * var(--lh) * 0.25);
   font-family: minipax-bold;
 }
-ul {
-    list-style-type: disc;
-    list-style-position: outside;
-    padding-left: 0.75em;
-}
 
-main > p {
-  margin-top: calc(var(--fs) * var(--lh) * 0.45);
-  margin-bottom: calc(var(--fs) * var(--lh) * 0.25);
-  font-size: calc(var(--fs) * 0.6);
-}
-
-ul ul {
-    list-style-type: none;
-}
-
-ul li {
-    font-size: calc(var(--fs) * 0.70);
-    margin-bottom: calc(var(--fs) * var(--lh) * 0.40);
-}
-
-ul ul li {
-    font-size: calc(var(--fs) * 0.7);
-    margin-bottom: calc(var(--fs) * var(--lh) * 0.67);
-}
-
-ul#menu, ul#menu li {
-    font-size: calc(var(--fs) * 0.70);
-    list-style-type: none;
-    margin-left: 0;
-    margin-right: 0.5em;
-    display: inline;
-    padding: 0;
-}
-
-h2 {
-    margin-bottom: calc(var(--fs) * var(--lh) * 0.15);
-}
-
-h4 {
+.about-container h4 {
   font-size: calc(var(--fs) * 0.70);
   line-height: var(--lh);
   font-weight: normal;
   margin-bottom: calc(var(--fs) * var(--lh) * 0.25);
 }
 
-h5 {
-    font-size: calc(var(--fs) * 0.75);
-    font-style: italic;
+.about-container ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 0.75em;
+}
+
+.about-container ul ul {
+    list-style-type: none;
+}
+
+.about-container ul li {
+    font-size: calc(var(--fs) * 0.70);
+    margin-bottom: calc(var(--fs) * var(--lh) * 0.40);
+}
+
+.about-container ul ul li {
+    font-size: calc(var(--fs) * 0.7);
+    margin-bottom: calc(var(--fs) * var(--lh) * 0.67);
+}
+
+.about-container ul#menu,
+.about-container ul#menu li {
+    font-size: calc(var(--fs) * 0.70);
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0.5em;
+    display: inline;
+    padding: 0;
 }
 
 .venue {
@@ -456,10 +481,10 @@ h5 {
   :root {
     --fs: 32px;
   }
-  main {
+  .about-container {
     padding: 30px 44px;
   }
-  .landing {
+  .defense-container {
     padding: 40px 30px;
   }
 }
@@ -468,7 +493,7 @@ h5 {
   :root {
     --fs: 30px;
   }
-  main {
+  .about-container {
     padding: 22px 34px;
   }
   .defense-info {
@@ -484,20 +509,38 @@ h5 {
   .jury-grid {
     gap: 0.8em;
   }
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .about-container ul#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+  }
 }
 
 @media screen and (max-width: 540px) {
   :root {
     --fs: 28px;
   }
-  main {
+  .about-container {
     padding: 12px 20px;
   }
-  .landing {
+  .defense-container {
     padding: 30px 20px;
   }
   .thesis-title {
     font-size: calc(var(--fs) * 0.9);
+  }
+  .tab {
+    padding: 1em 1.2em;
+    font-size: calc(var(--fs) * 0.38);
   }
 }
 
@@ -505,10 +548,10 @@ h5 {
   :root {
     --fs: 28px;
   }
-  main {
+  .about-container {
     padding: 8px 15px;
   }
-  .landing {
+  .defense-container {
     padding: 20px 15px;
   }
 }
@@ -517,7 +560,7 @@ h5 {
   :root {
     --fs: 2.444444444vw;
   }
-  main {
+  .about-container {
     padding: 2.2222222222vw 3vw;
   }
 }

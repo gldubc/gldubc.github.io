@@ -12,189 +12,216 @@
 </head>
 <body>
 
-<!-- Landing / Announcement Section -->
-<section class="landing">
-    <div class="announcement-badge">PhD Defense</div>
-    <h1 class="thesis-title">Typing Dynamic Languages with Set-Theoretic Types: The Case of Elixir</h1>
-    
-    <div class="defense-info">
-        <div class="info-block">
-            <span class="info-label">When</span>
-            <span class="info-value">Monday, January 19, 2026 — 1:30 PM</span>
+<nav class="tabs">
+    <a href="#defense" class="tab" data-tab="defense">PhD Defense</a>
+    <a href="#about" class="tab" data-tab="about">About</a>
+</nav>
+
+<!-- Defense Announcement Section -->
+<section id="defense" class="page">
+    <div class="defense-container">
+        <div class="announcement-badge">PhD Defense</div>
+        <h1 class="thesis-title">Typing Dynamic Languages with Set-Theoretic Types: The Case of Elixir</h1>
+        
+        <div class="defense-info">
+            <div class="info-block">
+                <span class="info-label">When</span>
+                <span class="info-value">Monday, January 19, 2026 — 1:30 PM</span>
+            </div>
+            <div class="info-block">
+                <span class="info-label">Where</span>
+                <span class="info-value">IRIF, Turing Amphitheater<br>
+                <span class="info-detail">8 place Aurélie Nemours, 75013 Paris<br>Basement of the Sophie Germain building</span></span>
+            </div>
         </div>
-        <div class="info-block">
-            <span class="info-label">Where</span>
-            <span class="info-value">IRIF, Turing Amphitheater<br>
-            <span class="info-detail">8 place Aurélie Nemours, 75013 Paris<br>Basement of the Sophie Germain building</span></span>
+
+        <div class="jury-section">
+            <h2 class="section-label">Jury</h2>
+            <div class="jury-grid">
+                <div class="jury-member">
+                    <span class="jury-name">Didier Rémy</span>
+                    <span class="jury-role">Reviewer</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">Éric Tanter</span>
+                    <span class="jury-role">Reviewer</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">Annette Bieniusa</span>
+                    <span class="jury-role">Examiner</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">Mariangiola Dezani</span>
+                    <span class="jury-role">Examiner</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">Ben Greenman</span>
+                    <span class="jury-role">Examiner</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">Giuseppe Castagna</span>
+                    <span class="jury-role">Thesis Director</span>
+                </div>
+                <div class="jury-member">
+                    <span class="jury-name">José Valim</span>
+                    <span class="jury-role">Co-supervisor, Elixir Creator</span>
+                </div>
+            </div>
         </div>
+
+        <div class="links-section">
+            <a href="https://www.irif.fr/_media/users/gduboc/duboc-phd-thesis-typing-elixir.pdf" target="_blank" class="cta-link">
+                <span class="cta-icon">📄</span> Read the Manuscript
+            </a>
+            <div class="remote-info">
+                <span class="remote-label">Remote Access</span>
+                <a href="https://u-paris.zoom.us/j/4186117566?pwd=03xbZa5ufPaTLAkmcoGqMi0XyZqino.1&omn=88508256697" target="_blank" class="zoom-link">Join via Zoom</a>
+                <span class="zoom-code">Code: 722301</span>
+            </div>
+        </div>
+
+        <details class="abstract-section">
+            <summary>Abstract</summary>
+            <div class="abstract-content">
+                <p>Adding static types to dynamic languages requires balancing expressiveness, safety, and backward compatibility. These trade-offs often limit the practical adoption of type systems. This thesis presents a gradual type system for Elixir grounded in set-theoretic types, where types denote sets of values and support union, intersection, and negation operations.</p>
+                
+                <p>The central hypothesis is that set-theoretic types are particularly well-suited for capturing the programming patterns of dynamic languages. Union types reflect the branching nature of dynamic programs; intersection types express data flow and function overloading; negation types enable precise analysis of pattern matching by excluding values captured by preceding branches.</p>
+                
+                <p>A key challenge is articulating gradual typing with semantic subtyping. We represent gradual types as intervals bounded below by the precise static type of all known values and above by the dynamic type of all possible values, enabling fine-grained tracking of type information at the boundaries between typed and untyped code.</p>
+                
+                <p>On the theoretical side, we present a safe-erasure gradual typing discipline exploiting runtime checks already in the Erlang VM, an extensive typed analysis of pattern matching, and an extension of semantic subtyping to handle Elixir's data structures. To prevent the unchecked spread of dynamic types, we introduce strong function refinements, a crucial aspect for maintaining type safety in a gradually typed system.</p>
+                
+                <p>On the practical side, we address implementation within the Elixir compiler. We present efficient algorithms and data structures for type operations, evaluate compilation performance, and document design choices that minimize overhead while preserving expressiveness, constituting a guide for language implementers seeking to integrate gradual set-theoretic types into dynamic languages.</p>
+            </div>
+        </details>
     </div>
-
-    <div class="jury-section">
-        <h2 class="section-label">Jury</h2>
-        <div class="jury-grid">
-            <div class="jury-member">
-                <span class="jury-name">Didier Rémy</span>
-                <span class="jury-role">Reviewer</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">Éric Tanter</span>
-                <span class="jury-role">Reviewer</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">Annette Bieniusa</span>
-                <span class="jury-role">Examiner</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">Mariangiola Dezani</span>
-                <span class="jury-role">Examiner</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">Ben Greenman</span>
-                <span class="jury-role">Examiner</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">Giuseppe Castagna</span>
-                <span class="jury-role">Thesis Director</span>
-            </div>
-            <div class="jury-member">
-                <span class="jury-name">José Valim</span>
-                <span class="jury-role">Co-supervisor, Elixir Creator</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="links-section">
-        <a href="https://www.irif.fr/_media/users/gduboc/duboc-phd-thesis-typing-elixir.pdf" target="_blank" class="cta-link">
-            <span class="cta-icon">📄</span> Read the Manuscript
-        </a>
-        <div class="remote-info">
-            <span class="remote-label">Remote Access</span>
-            <a href="https://u-paris.zoom.us/j/4186117566?pwd=03xbZa5ufPaTLAkmcoGqMi0XyZqino.1&omn=88508256697" target="_blank" class="zoom-link">Join via Zoom</a>
-            <span class="zoom-code">Code: 722301</span>
-        </div>
-    </div>
-
-    <details class="abstract-section">
-        <summary>Abstract</summary>
-        <div class="abstract-content">
-            <p>Adding static types to dynamic languages requires balancing expressiveness, safety, and backward compatibility. These trade-offs often limit the practical adoption of type systems. This thesis presents a gradual type system for Elixir grounded in set-theoretic types, where types denote sets of values and support union, intersection, and negation operations.</p>
-            
-            <p>The central hypothesis is that set-theoretic types are particularly well-suited for capturing the programming patterns of dynamic languages. Union types reflect the branching nature of dynamic programs; intersection types express data flow and function overloading; negation types enable precise analysis of pattern matching by excluding values captured by preceding branches.</p>
-            
-            <p>A key challenge is articulating gradual typing with semantic subtyping. We represent gradual types as intervals bounded below by the precise static type of all known values and above by the dynamic type of all possible values, enabling fine-grained tracking of type information at the boundaries between typed and untyped code.</p>
-            
-            <p>On the theoretical side, we present a safe-erasure gradual typing discipline exploiting runtime checks already in the Erlang VM, an extensive typed analysis of pattern matching, and an extension of semantic subtyping to handle Elixir's data structures. To prevent the unchecked spread of dynamic types, we introduce strong function refinements, a crucial aspect for maintaining type safety in a gradually typed system.</p>
-            
-            <p>On the practical side, we address implementation within the Elixir compiler. We present efficient algorithms and data structures for type operations, evaluate compilation performance, and document design choices that minimize overhead while preserving expressiveness, constituting a guide for language implementers seeking to integrate gradual set-theoretic types into dynamic languages.</p>
-        </div>
-    </details>
-
-    <a href="#main" class="scroll-indicator">
-        <span>About me</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-        </svg>
-    </a>
 </section>
 
-<!-- Main Content -->
-<main id="main">
-<div style="display: flex; align-items: center;">
-    <img src="assets/avatar.jpg" alt="Guillaume Duboc" style="margin-right: 20px; border-radius: 50%;" width="200" height="200">
-    <div>
-        <h1>Guillaume Duboc</h1>
-        <h2>PhD Student at <a href="https://dashbit.co/">Dashbit</a>+<a
-                href="https://www.irif.fr/">IRIF</a></h2>
-        <h4>Paris, France</h4>
-        <p>I am working on set-theoretic type systems for dynamic languages such as Elixir.</p>
-        <ul id="menu">
-            <li><a href="mailto:guillaume.duboc@irif.fr" target="_blank">email</a></li>
-            <li><a href="https://github.com/gldubc" target="_blank">github</a></li>
-            <li><a href="https://www.linkedin.com/in/guillaume-duboc-52342b98/" target="_blank">linkedin</a></li>
-            <!-- <li><a href="https://drive.google.com/file/d/1--_im3SIx-o8hPnnMBn0piGlO0iHys1e/view?usp=sharing"
-                   target="_blank">cv</a></li> -->
+<!-- About / CV Section -->
+<section id="about" class="page">
+    <div class="about-container">
+        <div class="profile-header">
+            <img src="assets/avatar.jpg" alt="Guillaume Duboc" class="avatar">
+            <div>
+                <h1>Guillaume Duboc</h1>
+                <h2>PhD Student at <a href="https://dashbit.co/">Dashbit</a>+<a href="https://www.irif.fr/">IRIF</a></h2>
+                <h4>Paris, France</h4>
+                <p class="bio">I am working on set-theoretic type systems for dynamic languages such as Elixir.</p>
+                <ul id="menu">
+                    <li><a href="mailto:guillaume.duboc@irif.fr" target="_blank">email</a></li>
+                    <li><a href="https://github.com/gldubc" target="_blank">github</a></li>
+                    <li><a href="https://www.linkedin.com/in/guillaume-duboc-52342b98/" target="_blank">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Talks</h3>
+        <ul>    
+            <li>2023</li>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=eBzoZWgZ334" target="_blank">
+                        The Design Principles of the Elixir Type System</a>
+                    <br/>
+                    <span class="venue">Code BEAM 2023</span>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=gJJH7a2J9O8&t=0s" target="_blank">
+                        Bringing Types to Elixir</a>
+                    <br/>
+                    <span class="venue">ElixirConf 2023</span>
+                </li>
+            </ul>
+        </ul>
+
+        <h3>Publications</h3>
+        <ul>
+            <li>2024</li>
+            <ul>
+                <li>
+                    Giuseppe Castagna, Guillaume Duboc
+                    <br/>
+                    <a href="https://arxiv.org/pdf/2408.14345" target="_blank">
+                        Guard Analysis and Safe Erasure Gradual Typing: a Type System for Elixir</a>
+                    <br/>
+                    <span class="venue">arXiv pre-print</span>
+                </li>
+            </ul>
+            <li>2023</li>
+            <ul>
+                <li>
+                    Giuseppe Castagna, Guillaume Duboc, José Valim
+                    <br/>
+                    <a href="https://www.irif.fr/_media/users/gduboc/elixir-types.pdf" target="_blank">
+                        The Design Principles of the Elixir Type System</a>
+                    <br/>
+                    <span class="venue">The Art, Science, and Engineering of Programming 
+                        - Best Paper of the Year Award</span>
+                </li>
+                <li>
+                    Guillaume Duboc
+                    <br/>
+                    <a href="https://hal.science/hal-04406407/document" target="_blank">
+                        Un prototype de système de types graduels ensemblistes pour Elixir</a>
+                    <br/>
+                    <span class="venue">JFLA</span>
+                </li>
+            </ul>
+            <li>2021</li>
+            <ul>
+                <li>
+                    Richard Eisenberg, Guillaume Duboc, Stephanie Weirich and Daniel Lee
+                    <br/>
+                    <a href="https://dl.acm.org/doi/10.1145/3473569" target="_blank">
+                        An existential crisis resolved: Type inference for first-class existential types
+                    </a>
+                    <br/>
+                    <span class="venue">Proceedings of the ACM on Programming Languages 
+                        - Distinguished Paper Award</span>
+                </li>
+            </ul>
+        </ul>
+
+        <h3>Projects</h3>
+        <ul>
+            <li>
+                <a href="https://typex.fly.dev/" target="_blank">Elixir Type Checker</a>
+                <br/>
+                A (prototype) type checker for Elixir based on set-theoretic type systems.
+            </li>
+            <li>
+                <a href="https://www.irif.fr/_media/users/gduboc/these-frisch-eng.pdf" target="_blank">Alain Frisch's Thesis</a>
+                <br/>
+                A while ago, I translated Alain Frisch's thesis on CDuce.
+            </li>
         </ul>
     </div>
-</div>
+</section>
 
-<h3>Talks</h3>
-<ul>    
-    <li>2023</li>
-    <ul>
-        <li>
-            <a href="https://www.youtube.com/watch?v=eBzoZWgZ334" target="_blank">
-                The Design Principles of the Elixir Type System</a>
-            <br/>
-            <span class="venue">Code BEAM 2023</span>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/watch?v=gJJH7a2J9O8&t=0s" target="_blank">
-                Bringing Types to Elixir</a>
-            <br/>
-            <span class="venue">ElixirConf 2023</span>
-        </li>
-    </ul>
-</ul>
-<h3>Publications</h3>
-<ul>
-    <li>2024</li>
-    <ul>
-        <li>
-            Giuseppe Castagna, Guillaume Duboc
-            <br/>
-            <a href="https://arxiv.org/pdf/2408.14345" target="_blank">
-                Guard Analysis and Safe Erasure Gradual Typing: a Type System for Elixir</a>
-            <br/>
-            <span class="venue">arXiv pre-print</span>
-        </li>
-    </ul>
-    <li>2023</li>
-    <ul>
-        <li>
-            Giuseppe Castagna, Guillaume Duboc, José Valim
-            <br/>
-            <a href="https://www.irif.fr/_media/users/gduboc/elixir-types.pdf" target="_blank">
-                The Design Principles of the Elixir Type System</a>
-            <br/>
-            <span class="venue">The Art, Science, and Engineering of Programming 
-                - Best Paper of the Year Award</span>
-        </li>
-        <li>
-            Guillaume Duboc
-            <br/>
-            <a href="https://hal.science/hal-04406407/document" target="_blank">
-                Un prototype de système de types graduels ensemblistes pour Elixir</a>
-            <br/>
-            <span class="venue">JFLA</span>
-        </li>
-    </ul>
-    <li>2021</li>
-    <ul>
-        <li>
-            Richard Eisenberg, Guillaume Duboc, Stephanie Weirich and Daniel Lee
-            <br/>
-            <a href="https://dl.acm.org/doi/10.1145/3473569" target="_blank">
-                An existential crisis resolved: Type inference for first-class existential types
-            </a>
-            <br/>
-            <span class="venue">Proceedings of the ACM on Programming Languages 
-                - Distinguished Paper Award</span>
-        </li>
-    </ul>
-</ul>
-<h3>Projects</h3>
-<ul>
-    <li>
-        <a href="https://typex.fly.dev/" target="_blank">Elixir Type Checker</a>
-        <br/>
-        A (prototype) type checker for Elixir based on set-theoretic type systems.
-    </li>
-    <li>
-        <a href="https://www.irif.fr/_media/users/gduboc/these-frisch-eng.pdf" target="_blank">Alain Frisch's Thesis</a>
-        <br/>
-        A while ago, I translated Alain Frisch's thesis on CDuce.
-    </li>
-</ul>
-</main>
+<script>
+    function setActiveTab(hash) {
+        const validTabs = ['defense', 'about'];
+        const tabId = validTabs.includes(hash) ? hash : 'defense';
+        
+        // Update tab styles
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.tab === tabId);
+        });
+        
+        // Show/hide pages
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.toggle('active', page.id === tabId);
+        });
+    }
+
+    // Handle hash changes
+    window.addEventListener('hashchange', () => {
+        setActiveTab(location.hash.slice(1));
+    });
+
+    // Set initial tab on load
+    setActiveTab(location.hash.slice(1) || 'defense');
+</script>
+
 </body>
 </html>
