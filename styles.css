@@ -104,27 +104,27 @@ a:hover {
     flex: 1;
 }
 
-/* Default state: show defense, highlight defense tab */
-#defense {
+/* Default state: show thesis, highlight thesis tab */
+#thesis {
     display: block;
 }
 
-#tab-defense {
+#tab-thesis {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
 
-/* When #about is targeted: show about, hide defense */
+/* When #about is targeted: show about, hide thesis */
 #about:target {
     display: block;
 }
 
-#about:target ~ #defense {
+#about:target ~ #thesis {
     display: none;
 }
 
 /* Tab highlighting when #about is active */
-body:has(#about:target) #tab-defense {
+body:has(#about:target) #tab-thesis {
     color: #888;
     border-bottom-color: transparent;
 }
@@ -138,10 +138,10 @@ body:has(#about:target) #tab-about {
 /* This works because :target changes what's "active" */
 
 /* ============================================
-   DEFENSE PAGE
+   THESIS PAGE
    ============================================ */
 
-#defense {
+#thesis {
     background: var(--bg-warm);
     background-image: 
         radial-gradient(ellipse at 20% 30%, rgba(107, 68, 35, 0.03) 0%, transparent 50%),
@@ -293,40 +293,6 @@ body:has(#about:target) #tab-about {
     text-decoration: none;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(107, 68, 35, 0.25);
-}
-
-.cta-icon {
-    font-style: normal;
-}
-
-.remote-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4em;
-    padding: 1em 1.5em;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    border: 1px dashed rgba(107, 68, 35, 0.2);
-}
-
-.remote-label {
-    font-family: minipax-regular;
-    font-size: calc(var(--fs) * 0.3);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #888;
-}
-
-.zoom-link {
-    font-family: happy-times;
-    font-size: calc(var(--fs) * 0.45);
-}
-
-.zoom-code {
-    font-family: minipax-regular;
-    font-size: calc(var(--fs) * 0.35);
-    color: #666;
 }
 
 /* Abstract Section */
