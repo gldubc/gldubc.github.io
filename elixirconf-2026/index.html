@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElixirConf 2026 Guard Analysis Tests</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">ElixirConf 2026</p>
+                <h1>Guard analysis test files from the talk</h1>
+                <p class="lede">
+                    Version-pinned examples for the guard negation and guard refinement
+                    comparisons shown in <em>From Guards to Types</em>.
+                </p>
+
+                <div class="hero-links">
+                    <a class="button button-primary" href="./downloads/elixirconf-2026-guard-analysis-tests.zip">Download ZIP</a>
+                    <a class="button button-secondary" href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank" rel="noreferrer">Browse on GitHub</a>
+                    <a class="button button-ghost" href="../">Back to home</a>
+                </div>
+            </div>
+
+            <aside class="hero-aside">
+                <div class="qr-card">
+                    <img src="./assets/elixirconf-2026-qr.png" alt="QR code for gldubc.github.io/elixirconf-2026">
+                    <p class="qr-label">gldubc.github.io/elixirconf-2026/</p>
+                </div>
+            </aside>
+        </header>
+
+        <section class="intro-grid">
+            <article class="intro-card">
+                <h2>What is here</h2>
+                <p>
+                    Two baseline files for <code>Elixir 1.19.5</code>, two current files for
+                    <code>Elixir 1.20.0-rc.4</code>, and the minimal helper needed to run the newer
+                    scripts without a full Elixir checkout.
+                </p>
+            </article>
+
+            <article class="intro-card">
+                <h2>How to use it</h2>
+                <p>
+                    Read the files on GitHub, download the bundle, or run them locally with the
+                    matching Elixir version. The tests are grouped exactly the way they appear in
+                    the talk: negation examples and refinement examples.
+                </p>
+            </article>
+        </section>
+
+        <section class="bundle-card">
+            <div class="bundle-copy">
+                <p class="section-tag">Bundle</p>
+                <h2>One folder, pinned versions, no hidden setup</h2>
+                <p>
+                    The <code>1.20.0-rc.4</code> scripts no longer depend on an external
+                    <code>ELIXIR_CHECKOUT</code>. The helper used by the talk snapshot is included
+                    directly in the download bundle.
+                </p>
+            </div>
+
+            <div class="bundle-links">
+                <a href="./README.md">Read the local README</a>
+                <a href="./downloads/elixirconf-2026-guard-analysis-tests.zip">Download the full ZIP</a>
+            </div>
+        </section>
+
+        <section class="files-section">
+            <div class="section-heading">
+                <p class="section-tag">Files</p>
+                <h2>Shared materials</h2>
+            </div>
+
+            <div class="file-grid">
+                <article class="file-card">
+                    <p class="file-version">Elixir 1.19.5</p>
+                    <h3>Negation examples</h3>
+                    <p>Baseline assertions for the older compiler behaviour.</p>
+                    <div class="file-links">
+                        <a href="./downloads/guard_negation_examples_elixir_1.19.5.exs">Download</a>
+                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs" target="_blank" rel="noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+
+                <article class="file-card">
+                    <p class="file-version">Elixir 1.19.5</p>
+                    <h3>Refinement examples</h3>
+                    <p>Baseline assertions for precision, residual clauses, and diagnostics.</p>
+                    <div class="file-links">
+                        <a href="./downloads/guard_refinement_examples_elixir_1.19.5.exs">Download</a>
+                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.19.5.exs" target="_blank" rel="noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+
+                <article class="file-card">
+                    <p class="file-version">Elixir 1.20.0-rc.4</p>
+                    <h3>Negation examples</h3>
+                    <p>Self-contained talk snapshot for the newer guard-negation results.</p>
+                    <div class="file-links">
+                        <a href="./downloads/guard_negation_examples_elixir_1.20.0_rc4.exs">Download</a>
+                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.20.0_rc4.exs" target="_blank" rel="noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+
+                <article class="file-card">
+                    <p class="file-version">Elixir 1.20.0-rc.4</p>
+                    <h3>Refinement examples</h3>
+                    <p>Self-contained talk snapshot for the newer refinement and warning results.</p>
+                    <div class="file-links">
+                        <a href="./downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs">Download</a>
+                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs" target="_blank" rel="noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="notes-section">
+            <div class="section-heading">
+                <p class="section-tag">Run Notes</p>
+                <h2>Minimal commands</h2>
+            </div>
+
+            <div class="notes-grid">
+                <article class="note-card">
+                    <h3>Elixir 1.19.5</h3>
+                    <pre><code>elixir guard_negation_examples_elixir_1.19.5.exs
+elixir guard_refinement_examples_elixir_1.19.5.exs</code></pre>
+                </article>
+
+                <article class="note-card">
+                    <h3>Elixir 1.20.0-rc.4</h3>
+                    <pre><code>/path/to/elixir-1.20.0-rc.4/bin/elixir guard_negation_examples_elixir_1.20.0_rc4.exs
+/path/to/elixir-1.20.0-rc.4/bin/elixir guard_refinement_examples_elixir_1.20.0_rc4.exs</code></pre>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
