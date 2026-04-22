@@ -761,9 +761,10 @@ body:has(#elixirconf:target) #tab-elixirconf {
 
 .viewer-body {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
+    height: min(70vh, 620px);
     min-height: 440px;
-    max-height: 70vh;
+    overflow: hidden;
 }
 
 .viewer-lines,
@@ -776,6 +777,9 @@ body:has(#elixirconf:target) #tab-elixirconf {
     font-size: calc(var(--fs) * 0.28);
     line-height: 1.55;
     white-space: pre;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(107, 68, 35, 0.18) transparent;
 }
 
 .viewer-lines {
@@ -905,6 +909,7 @@ body:has(#elixirconf:target) #tab-elixirconf {
   }
   .viewer-body {
     min-height: 360px;
+    height: min(65vh, 520px);
   }
 }
 
@@ -935,6 +940,7 @@ body:has(#elixirconf:target) #tab-elixirconf {
   }
   .viewer-body {
     min-height: 320px;
+    height: min(60vh, 440px);
   }
   .entry {
     padding: 0.8em 0;
