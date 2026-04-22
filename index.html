@@ -14,6 +14,7 @@
 
 <nav class="tabs">
     <a href="#thesis" class="tab" id="tab-thesis">Thesis</a>
+    <a href="#elixirconf" class="tab" id="tab-elixirconf">ElixirConf 2026</a>
     <a href="#about" class="tab" id="tab-about">About</a>
 </nav>
 
@@ -85,9 +86,9 @@
                 <article class="entry">
                     <span class="entry-year">2026</span>
                     <div class="entry-content">
-                        <a href="elixirconf-2026/" target="_blank" class="entry-title">
+                        <a href="#elixirconf" class="entry-title">
                             From Guards to Types</a>
-                        <span class="entry-venue">ElixirConf 2026 · talk page with downloadable test files</span>
+                        <span class="entry-venue">ElixirConf 2026 · resources and test viewer</span>
                     </div>
                 </article>
                 <article class="entry">
@@ -121,6 +122,115 @@
                     <p class="project-desc">English translation of Alain Frisch's thesis on CDuce.</p>
                 </a>
             </div>
+        </section>
+    </div>
+</section>
+
+<section id="elixirconf" class="page">
+    <div class="about-container conference-container">
+        <header class="conference-header">
+            <div class="conference-copy">
+                <p class="conference-kicker">ElixirConf 2026</p>
+                <h1>Guard Analysis Test Files</h1>
+                <p class="conference-summary">
+                    These are the <code>.exs</code> files I shared after <em>From Guards to Types</em>.
+                    The bundle includes the <code>1.19.5</code> baseline and the
+                    <code>1.20.0-rc.4</code> snapshot used in the talk.
+                </p>
+                <p class="conference-summary">
+                    The newer files are self-contained, so they do not need a full Elixir checkout.
+                </p>
+                <nav class="social-links conference-links">
+                    <a href="elixirconf-2026/downloads/elixirconf-2026-guard-analysis-tests.zip">zip</a>
+                    <a href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank">github</a>
+                    <a href="elixirconf-2026/README.md">readme</a>
+                </nav>
+            </div>
+
+            <aside class="conference-qr">
+                <img src="elixirconf-2026/assets/elixirconf-2026-qr.png" alt="QR code for gldubc.github.io/elixirconf-2026">
+                <p>gldubc.github.io/elixirconf-2026/</p>
+            </aside>
+        </header>
+
+        <section class="cv-section">
+            <h3>Files</h3>
+            <div class="conference-viewer-controls" role="tablist" aria-label="ElixirConf test files">
+                <button class="viewer-tab is-active" type="button"
+                    data-file="elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs"
+                    data-github="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs">
+                    1.19.5 · negation
+                </button>
+                <button class="viewer-tab" type="button"
+                    data-file="elixirconf-2026/downloads/guard_refinement_examples_elixir_1.19.5.exs"
+                    data-github="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.19.5.exs">
+                    1.19.5 · refinement
+                </button>
+                <button class="viewer-tab" type="button"
+                    data-file="elixirconf-2026/downloads/guard_negation_examples_elixir_1.20.0_rc4.exs"
+                    data-github="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.20.0_rc4.exs">
+                    1.20 rc4 · negation
+                </button>
+                <button class="viewer-tab" type="button"
+                    data-file="elixirconf-2026/downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs"
+                    data-github="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs">
+                    1.20 rc4 · refinement
+                </button>
+            </div>
+
+            <div class="conference-viewer">
+                <div class="viewer-bar">
+                    <span class="viewer-name" id="viewer-name">guard_negation_examples_elixir_1.19.5.exs</span>
+                    <div class="viewer-actions">
+                        <a id="viewer-download" href="elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs" download>download</a>
+                        <a id="viewer-github" href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs" target="_blank">github</a>
+                    </div>
+                </div>
+                <div class="viewer-body">
+                    <pre class="viewer-lines" id="viewer-lines" aria-hidden="true"></pre>
+                    <pre class="viewer-code" id="viewer-code-pre"><code id="viewer-code">Loading…</code></pre>
+                </div>
+            </div>
+
+            <noscript>
+                <div class="entries conference-file-fallback">
+                    <article class="entry">
+                        <span class="entry-year">1.19.5</span>
+                        <div class="entry-content">
+                            <a href="elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs" class="entry-title">Negation examples</a>
+                        </div>
+                    </article>
+                    <article class="entry">
+                        <span class="entry-year">1.19.5</span>
+                        <div class="entry-content">
+                            <a href="elixirconf-2026/downloads/guard_refinement_examples_elixir_1.19.5.exs" class="entry-title">Refinement examples</a>
+                        </div>
+                    </article>
+                    <article class="entry">
+                        <span class="entry-year">1.20 rc4</span>
+                        <div class="entry-content">
+                            <a href="elixirconf-2026/downloads/guard_negation_examples_elixir_1.20.0_rc4.exs" class="entry-title">Negation examples</a>
+                        </div>
+                    </article>
+                    <article class="entry">
+                        <span class="entry-year">1.20 rc4</span>
+                        <div class="entry-content">
+                            <a href="elixirconf-2026/downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs" class="entry-title">Refinement examples</a>
+                        </div>
+                    </article>
+                </div>
+            </noscript>
+        </section>
+
+        <section class="cv-section">
+            <h3>Run</h3>
+            <p class="conference-code-label">Elixir 1.19.5</p>
+            <pre class="conference-code">elixir guard_negation_examples_elixir_1.19.5.exs
+elixir guard_refinement_examples_elixir_1.19.5.exs</pre>
+
+            <p class="conference-code-label">Elixir 1.20.0-rc.4</p>
+            <pre class="conference-code">/path/to/elixir-1.20.0-rc.4/bin/elixir guard_negation_examples_elixir_1.20.0_rc4.exs
+/path/to/elixir-1.20.0-rc.4/bin/elixir guard_refinement_examples_elixir_1.20.0_rc4.exs</pre>
         </section>
     </div>
 </section>
@@ -204,5 +314,6 @@
     </div>
 </section>
 
+<script src="elixirconf-2026/viewer.js"></script>
 </body>
 </html>

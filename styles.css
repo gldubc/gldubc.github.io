@@ -119,8 +119,18 @@ a:hover {
     display: block;
 }
 
+#about:target ~ #elixirconf,
 #about:target ~ #thesis {
     display: none;
+}
+
+body:has(#elixirconf:target) #about,
+body:has(#elixirconf:target) #thesis {
+    display: none;
+}
+
+body:has(#elixirconf:target) #elixirconf {
+    display: block;
 }
 
 /* Tab highlighting when #about is active */
@@ -129,7 +139,23 @@ body:has(#about:target) #tab-thesis {
     border-bottom-color: transparent;
 }
 
+body:has(#about:target) #tab-elixirconf {
+    color: #888;
+    border-bottom-color: transparent;
+}
+
 body:has(#about:target) #tab-about {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+body:has(#elixirconf:target) #tab-thesis,
+body:has(#elixirconf:target) #tab-about {
+    color: #888;
+    border-bottom-color: transparent;
+}
+
+body:has(#elixirconf:target) #tab-elixirconf {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
@@ -370,6 +396,10 @@ body:has(#about:target) #tab-about {
     background: #fff;
 }
 
+#elixirconf {
+    background: #fff;
+}
+
 .about-container {
     padding: 50px 60px 80px;
     max-width: 900px;
@@ -580,6 +610,232 @@ body:has(#about:target) #tab-about {
 }
 
 /* ============================================
+   ELIXIRCONF PAGE
+   ============================================ */
+
+.conference-container {
+    padding-top: 44px;
+}
+
+.conference-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    padding-bottom: 1.8em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.5em;
+}
+
+.conference-copy {
+    flex: 1;
+}
+
+.conference-kicker {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.38);
+    color: #888;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.4em;
+}
+
+.conference-copy h1 {
+    font-family: minipax-bold;
+    font-size: calc(var(--fs) * 1);
+    line-height: 1.1;
+    margin-bottom: 0.3em;
+}
+
+.conference-summary {
+    font-size: calc(var(--fs) * 0.46);
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 0.7em;
+    max-width: 20em;
+}
+
+.conference-summary code {
+    font-size: 0.9em;
+}
+
+.conference-links {
+    flex-wrap: wrap;
+    row-gap: 0.2em;
+}
+
+.conference-qr {
+    width: 190px;
+    flex-shrink: 0;
+}
+
+.conference-qr img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.conference-qr p {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.28);
+    color: #888;
+    margin-top: 0.6em;
+    text-align: center;
+    line-height: 1.35;
+}
+
+.conference-viewer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    margin-bottom: 1em;
+}
+
+.viewer-tab {
+    appearance: none;
+    border: 1px solid rgba(107, 68, 35, 0.14);
+    background: #fff;
+    color: #666;
+    border-radius: 999px;
+    padding: 0.65em 1em;
+    cursor: pointer;
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.32);
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.viewer-tab:hover {
+    color: var(--accent);
+    border-color: rgba(107, 68, 35, 0.24);
+    background: rgba(107, 68, 35, 0.03);
+}
+
+.viewer-tab.is-active {
+    color: white;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.conference-viewer {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fcfbf8;
+}
+
+.viewer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #e5e5e5;
+    background: rgba(107, 68, 35, 0.03);
+}
+
+.viewer-name {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.33);
+    color: #555;
+    line-height: 1.3;
+}
+
+.viewer-actions {
+    display: flex;
+    gap: 1.2em;
+    flex-wrap: wrap;
+}
+
+.viewer-actions a {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.32);
+    font-style: normal;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.viewer-actions a:hover {
+    text-decoration: underline;
+}
+
+.viewer-body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: 440px;
+    max-height: 70vh;
+}
+
+.viewer-lines,
+.viewer-code {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    overflow: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: calc(var(--fs) * 0.28);
+    line-height: 1.55;
+    white-space: pre;
+}
+
+.viewer-lines {
+    padding-left: 1em;
+    padding-right: 0.9em;
+    background: #f3eee6;
+    color: #a39c92;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid #e5e5e5;
+}
+
+.viewer-code {
+    padding-left: 1em;
+    padding-right: 1.2em;
+    color: #333;
+    background: #fcfbf8;
+}
+
+.viewer-lines::-webkit-scrollbar,
+.viewer-code::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+}
+
+.viewer-lines::-webkit-scrollbar-thumb,
+.viewer-code::-webkit-scrollbar-thumb {
+    background: rgba(107, 68, 35, 0.18);
+    border-radius: 999px;
+}
+
+.conference-file-fallback {
+    margin-top: 1em;
+}
+
+.conference-code-label {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.3);
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.55em;
+}
+
+.conference-code {
+    margin: 0 0 1em;
+    padding: 1em 1.1em;
+    background: var(--bg-warm);
+    border: 1px solid rgba(107, 68, 35, 0.1);
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: calc(var(--fs) * 0.3);
+    line-height: 1.55;
+    color: #444;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ============================================
    RESPONSIVE STYLES
    ============================================ */
 
@@ -605,6 +861,9 @@ body:has(#about:target) #tab-about {
   .defense-info {
     gap: 2em;
   }
+  .conference-summary {
+    max-width: none;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -620,8 +879,15 @@ body:has(#about:target) #tab-about {
     text-align: center;
     gap: 1.5em;
   }
+  .conference-header {
+    flex-direction: column;
+    gap: 1.5em;
+  }
   .social-links {
     justify-content: center;
+  }
+  .conference-links {
+    justify-content: flex-start;
   }
   .entry {
     grid-template-columns: 3.5em 1fr;
@@ -629,6 +895,16 @@ body:has(#about:target) #tab-about {
   }
   .entry-year {
     font-size: calc(var(--fs) * 0.38);
+  }
+  .conference-qr {
+    width: min(220px, 100%);
+  }
+  .viewer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .viewer-body {
+    min-height: 360px;
   }
 }
 
@@ -652,6 +928,13 @@ body:has(#about:target) #tab-about {
   .avatar {
     width: 120px;
     height: 120px;
+  }
+  .viewer-tab {
+    font-size: calc(var(--fs) * 0.3);
+    padding: 0.6em 0.9em;
+  }
+  .viewer-body {
+    min-height: 320px;
   }
   .entry {
     padding: 0.8em 0;
