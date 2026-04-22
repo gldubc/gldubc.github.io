@@ -799,6 +799,44 @@ body:has(#elixirconf:target) #tab-elixirconf {
     background: #fcfbf8;
 }
 
+.viewer-code code {
+    display: block;
+    min-height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.tok-comment {
+    color: #7b8b67;
+}
+
+.tok-string {
+    color: #2f7a6a;
+}
+
+.tok-keyword {
+    color: #8e4d1a;
+    font-weight: 600;
+}
+
+.tok-builtin {
+    color: #5d6d7e;
+    font-weight: 600;
+}
+
+.tok-module {
+    color: #6b4423;
+}
+
+.tok-atom {
+    color: #b05a4a;
+}
+
+.tok-number {
+    color: #8f6f2a;
+}
+
 .viewer-lines::-webkit-scrollbar,
 .viewer-code::-webkit-scrollbar {
     display: block;
