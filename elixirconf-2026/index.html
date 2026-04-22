@@ -21,21 +21,26 @@
 </nav>
 
 <main class="about-container conference-container">
-    <div class="announcement-badge">ElixirConf 2026</div>
-
     <header class="conference-header">
         <div class="conference-copy">
+            <p class="conference-kicker">ElixirConf 2026</p>
             <h1>Guard Analysis Test Files</h1>
+
             <p class="conference-summary">
-                Version-pinned <code>.exs</code> files from <em>From Guards to Types</em>,
-                including a self-contained helper for the <code>1.20.0-rc.4</code> snapshot.
+                These are the <code>.exs</code> files I shared after <em>From Guards to Types</em>.
+                The bundle includes the <code>1.19.5</code> baseline and the
+                <code>1.20.0-rc.4</code> snapshot used in the talk.
+            </p>
+
+            <p class="conference-summary">
+                The newer files are self-contained, so they do not need a full Elixir checkout.
             </p>
 
             <nav class="social-links conference-links">
-                <a href="./downloads/elixirconf-2026-guard-analysis-tests.zip">download zip</a>
-                <a href="./README.md">readme</a>
-                <a href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank" rel="noreferrer">github files</a>
-                <a href="https://github.com/gldubc" target="_blank" rel="noreferrer">github profile</a>
+                <a href="./downloads/elixirconf-2026-guard-analysis-tests.zip">zip</a>
+                <a href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank" rel="noreferrer">github</a>
+                <a href="../">home</a>
+                <a href="../#about">about</a>
             </nav>
         </div>
 
@@ -45,140 +50,61 @@
         </aside>
     </header>
 
-    <section class="defense-info conference-info">
-        <div class="info-block">
-            <span class="info-label">Talk</span>
-            <span class="info-value">From Guards to Types</span>
-        </div>
-        <div class="info-block">
-            <span class="info-label">Versions</span>
-            <span class="info-value">Elixir 1.19.5 and 1.20.0-rc.4</span>
-        </div>
-        <div class="info-block">
-            <span class="info-label">Format</span>
-            <span class="info-value">Readable on GitHub, downloadable as a zip, runnable locally</span>
-        </div>
-    </section>
-
     <section class="cv-section">
-        <h3>Bundle</h3>
-        <div class="projects-grid">
-            <a href="./downloads/elixirconf-2026-guard-analysis-tests.zip" class="project-card">
-                <span class="project-title">Full bundle (.zip)</span>
-                <p class="project-desc">All shared files in one folder, with pinned names and the vendored 1.20 helper.</p>
-            </a>
-            <a href="./README.md" class="project-card">
-                <span class="project-title">README</span>
-                <p class="project-desc">Short notes on file contents, version mapping, and the exact run commands.</p>
-            </a>
-            <a href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank" rel="noreferrer" class="project-card">
-                <span class="project-title">GitHub tree</span>
-                <p class="project-desc">Browse the same files online with syntax highlighting and stable links.</p>
-            </a>
-        </div>
-    </section>
-
-    <section class="cv-section">
-        <h3>Shared Files</h3>
-        <div class="entries files-list">
+        <h3>Files</h3>
+        <div class="entries conference-files">
             <article class="entry">
                 <span class="entry-year">1.19.5</span>
                 <div class="entry-content">
-                    <span class="entry-title">Negation examples</span>
-                    <p class="entry-authors">Baseline assertions for the older compiler behaviour.</p>
-                    <div class="entry-links">
-                        <a href="./downloads/guard_negation_examples_elixir_1.19.5.exs">download</a>
-                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.19.5.exs" target="_blank" rel="noreferrer">view on github</a>
-                    </div>
+                    <a href="./downloads/guard_negation_examples_elixir_1.19.5.exs" class="entry-title">
+                        Negation examples
+                    </a>
+                    <span class="entry-venue">Older compiler baseline.</span>
                 </div>
             </article>
 
             <article class="entry">
                 <span class="entry-year">1.19.5</span>
                 <div class="entry-content">
-                    <span class="entry-title">Refinement examples</span>
-                    <p class="entry-authors">Baseline assertions for precision, residual clauses, and diagnostics.</p>
-                    <div class="entry-links">
-                        <a href="./downloads/guard_refinement_examples_elixir_1.19.5.exs">download</a>
-                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.19.5.exs" target="_blank" rel="noreferrer">view on github</a>
-                    </div>
+                    <a href="./downloads/guard_refinement_examples_elixir_1.19.5.exs" class="entry-title">
+                        Refinement examples
+                    </a>
+                    <span class="entry-venue">Older compiler baseline.</span>
                 </div>
             </article>
 
             <article class="entry">
                 <span class="entry-year">1.20 rc4</span>
                 <div class="entry-content">
-                    <span class="entry-title">Negation examples</span>
-                    <p class="entry-authors">Self-contained talk snapshot for the newer guard-negation results.</p>
-                    <div class="entry-links">
-                        <a href="./downloads/guard_negation_examples_elixir_1.20.0_rc4.exs">download</a>
-                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_negation_examples_elixir_1.20.0_rc4.exs" target="_blank" rel="noreferrer">view on github</a>
-                    </div>
+                    <a href="./downloads/guard_negation_examples_elixir_1.20.0_rc4.exs" class="entry-title">
+                        Negation examples
+                    </a>
+                    <span class="entry-venue">Self-contained talk snapshot.</span>
                 </div>
             </article>
 
             <article class="entry">
                 <span class="entry-year">1.20 rc4</span>
                 <div class="entry-content">
-                    <span class="entry-title">Refinement examples</span>
-                    <p class="entry-authors">Self-contained talk snapshot for the newer refinement and warning results.</p>
-                    <div class="entry-links">
-                        <a href="./downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs">download</a>
-                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs" target="_blank" rel="noreferrer">view on github</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="entry">
-                <span class="entry-year">helper</span>
-                <div class="entry-content">
-                    <span class="entry-title">Vendored 1.20 helper</span>
-                    <p class="entry-authors">Adapted from Elixir test code so the newer scripts run without a full checkout.</p>
-                    <div class="entry-links">
-                        <a href="./downloads/type_helper_elixir_1.20.0_rc4.exs">download</a>
-                        <a href="https://github.com/gldubc/gldubc.github.io/blob/main/elixirconf-2026/downloads/type_helper_elixir_1.20.0_rc4.exs" target="_blank" rel="noreferrer">view on github</a>
-                    </div>
+                    <a href="./downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs" class="entry-title">
+                        Refinement examples
+                    </a>
+                    <span class="entry-venue">Self-contained talk snapshot.</span>
                 </div>
             </article>
         </div>
     </section>
 
     <section class="cv-section">
-        <h3>Run Notes</h3>
-        <div class="run-notes">
-            <article class="run-card">
-                <span class="run-label">Elixir 1.19.5</span>
-                <pre><code>elixir guard_negation_examples_elixir_1.19.5.exs
+        <h3>Run</h3>
+        <div class="conference-code">
+            <p class="conference-code-label">Elixir 1.19.5</p>
+            <pre><code>elixir guard_negation_examples_elixir_1.19.5.exs
 elixir guard_refinement_examples_elixir_1.19.5.exs</code></pre>
-            </article>
 
-            <article class="run-card">
-                <span class="run-label">Elixir 1.20.0-rc.4</span>
-                <pre><code>/path/to/elixir-1.20.0-rc.4/bin/elixir guard_negation_examples_elixir_1.20.0_rc4.exs
+            <p class="conference-code-label">Elixir 1.20.0-rc.4</p>
+            <pre><code>/path/to/elixir-1.20.0-rc.4/bin/elixir guard_negation_examples_elixir_1.20.0_rc4.exs
 /path/to/elixir-1.20.0-rc.4/bin/elixir guard_refinement_examples_elixir_1.20.0_rc4.exs</code></pre>
-            </article>
-        </div>
-    </section>
-
-    <section class="cv-section">
-        <h3>Elsewhere On This Site</h3>
-        <div class="projects-grid">
-            <a href="../" class="project-card">
-                <span class="project-title">Home</span>
-                <p class="project-desc">Back to the main page.</p>
-            </a>
-            <a href="../#thesis" class="project-card">
-                <span class="project-title">Thesis</span>
-                <p class="project-desc">Defense page, jury, and manuscript link.</p>
-            </a>
-            <a href="../#about" class="project-card">
-                <span class="project-title">About / talks / papers</span>
-                <p class="project-desc">Publications, talks, and the rest of the profile page.</p>
-            </a>
-            <a href="../assets/duboc-phd-thesis-typing-elixir.pdf" class="project-card">
-                <span class="project-title">Thesis PDF</span>
-                <p class="project-desc">Direct link to the manuscript hosted on the site.</p>
-            </a>
         </div>
     </section>
 </main>
