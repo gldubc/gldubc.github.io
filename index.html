@@ -138,7 +138,8 @@
                     <code>1.20.0-rc.4</code> snapshot used in the talk.
                 </p>
                 <p class="conference-summary">
-                    The newer files are self-contained, so they do not need a full Elixir checkout.
+                    The <code>1.20.0-rc.4</code> files load Elixir's own test helper from a matching
+                    checkout via <code>ELIXIR_CHECKOUT</code>.
                 </p>
                 <nav class="social-links conference-links">
                     <a href="https://github.com/gldubc/gldubc.github.io/tree/main/elixirconf-2026" target="_blank">github</a>
@@ -224,8 +225,8 @@
         <section class="cv-section">
             <h3>Run</h3>
             <p class="conference-code-label">Elixir 1.20.0-rc.4</p>
-            <pre class="conference-code">elixir guard_negation_examples_elixir_1.20.0_rc4.exs
-elixir guard_refinement_examples_elixir_1.20.0_rc4.exs</pre>
+            <pre class="conference-code">ELIXIR_CHECKOUT=/path/to/elixir-checkout elixir guard_negation_examples_elixir_1.20.0_rc4.exs
+ELIXIR_CHECKOUT=/path/to/elixir-checkout elixir guard_refinement_examples_elixir_1.20.0_rc4.exs</pre>
 
             <p class="conference-code-label">Elixir 1.19.5</p>
             <pre class="conference-code">elixir guard_negation_examples_elixir_1.19.5.exs
