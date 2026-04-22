@@ -16,18 +16,19 @@ elixir guard_negation_examples_elixir_1.19.5.exs
 elixir guard_refinement_examples_elixir_1.19.5.exs
 ```
 
-For the `1.20.0-rc.4` snapshot:
+For the `1.20.0-rc.4` snapshot, activate that Elixir version and run:
 
 ```bash
-/path/to/elixir-1.20.0-rc.4/bin/elixir guard_negation_examples_elixir_1.20.0_rc4.exs
-/path/to/elixir-1.20.0-rc.4/bin/elixir guard_refinement_examples_elixir_1.20.0_rc4.exs
+elixir guard_negation_examples_elixir_1.20.0_rc4.exs
+elixir guard_refinement_examples_elixir_1.20.0_rc4.exs
 ```
 
-The `1.20.0-rc.4` files vendor a minimal helper adapted from Elixir's
-`lib/elixir/test/elixir/module/types/type_helper.exs`.
+Each example starts the same way: `elixir <file>.exs`.
+The helper files are loaded internally by the examples.
 
 ## Files
 
+- `downloads/type_helper_elixir_1.19.5.exs`
 - `downloads/guard_negation_examples_elixir_1.19.5.exs`
 - `downloads/guard_refinement_examples_elixir_1.19.5.exs`
 - `downloads/type_helper_elixir_1.20.0_rc4.exs`
