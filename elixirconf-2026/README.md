@@ -24,19 +24,18 @@ elixir guard_refinement_examples_elixir_1.20.0_rc4.exs
 ```
 
 Each example starts the same way: `elixir <file>.exs`.
-The helper files are loaded internally by the examples.
+The `1.19.5` files load a local helper, while the `1.20.0-rc.4` files are fully self-contained.
 
 ## Files
 
 - `downloads/type_helper_elixir_1.19.5.exs`
 - `downloads/guard_negation_examples_elixir_1.19.5.exs`
 - `downloads/guard_refinement_examples_elixir_1.19.5.exs`
-- `downloads/type_helper_elixir_1.20.0_rc4.exs`
 - `downloads/guard_negation_examples_elixir_1.20.0_rc4.exs`
 - `downloads/guard_refinement_examples_elixir_1.20.0_rc4.exs`
 
 ## Attribution
 
-`type_helper_elixir_1.20.0_rc4.exs` is adapted from Elixir test code by the
-Elixir Team and Plataformatec, distributed under Apache-2.0. The file keeps the
-upstream SPDX notices in its header.
+The helper code embedded in the `1.20.0-rc.4` files is adapted from Elixir test
+code by the Elixir Team and Plataformatec, distributed under Apache-2.0. Those
+files keep the upstream SPDX notices in their headers.
