@@ -650,7 +650,7 @@ body:has(#elixirconf:target) #tab-elixirconf {
     line-height: 1.5;
     color: #555;
     margin-bottom: 0.7em;
-    max-width: 20em;
+    max-width: 32em;
 }
 
 .conference-summary code {
@@ -660,28 +660,6 @@ body:has(#elixirconf:target) #tab-elixirconf {
 .conference-links {
     flex-wrap: wrap;
     row-gap: 0.2em;
-}
-
-.conference-qr {
-    width: 190px;
-    flex-shrink: 0;
-}
-
-.conference-qr img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-.conference-qr p {
-    font-family: minipax-regular;
-    font-size: calc(var(--fs) * 0.28);
-    color: #888;
-    margin-top: 0.6em;
-    text-align: center;
-    line-height: 1.35;
 }
 
 .conference-viewer-controls {
@@ -937,9 +915,6 @@ body:has(#elixirconf:target) #tab-elixirconf {
   }
   .entry-year {
     font-size: calc(var(--fs) * 0.38);
-  }
-  .conference-qr {
-    width: min(220px, 100%);
   }
   .viewer-bar {
     flex-direction: column;
