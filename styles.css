@@ -609,6 +609,73 @@ body:has(#elixirconf:target) #tab-elixirconf {
     line-height: 1.4;
 }
 
+/* Tool launcher pages */
+.tool-page {
+    background: var(--bg-warm);
+}
+
+.tool-landing {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+.tool-panel {
+    width: min(100%, 760px);
+    padding: 2.6em;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(107, 68, 35, 0.12);
+    border-radius: 8px;
+}
+
+.tool-kicker {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.38);
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.7em;
+}
+
+.tool-title {
+    font-family: minipax-bold;
+    font-size: calc(var(--fs) * 0.95);
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin-bottom: 0.45em;
+}
+
+.tool-summary,
+.tool-status {
+    font-size: calc(var(--fs) * 0.48);
+    line-height: 1.5;
+    color: #555;
+    max-width: 32em;
+    margin-bottom: 0.8em;
+}
+
+.tool-status {
+    font-size: calc(var(--fs) * 0.4);
+    color: #666;
+}
+
+.tool-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    flex-wrap: wrap;
+    margin-top: 1.5em;
+}
+
+.tool-secondary-link {
+    font-family: minipax-regular;
+    font-size: calc(var(--fs) * 0.36);
+    font-style: normal;
+    color: var(--accent);
+}
+
 /* ============================================
    ELIXIRCONF PAGE
    ============================================ */
@@ -929,6 +996,12 @@ body:has(#elixirconf:target) #tab-elixirconf {
 @media screen and (max-width: 540px) {
   :root {
     --fs: 28px;
+  }
+  .tool-landing {
+    padding: 28px 18px;
+  }
+  .tool-panel {
+    padding: 1.5em;
   }
   .about-container {
     padding: 20px 20px 40px;
