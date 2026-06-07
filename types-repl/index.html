@@ -370,6 +370,7 @@
 {false, true} <= pair ;;
 {integer, boolean} <= {integer, ...} ;;
 %{foo: term()} and %{..., foo: term(), bar: term()} ;;
+((integer, integer) -> integer) (integer, integer) ;;
 %{foo: integer, bar: boolean}[:foo] ;;
 (integer() -> boolean -> integer()) integer boolean() ;;</textarea>
         <div class="examples" id="examples"></div>
@@ -417,7 +418,7 @@
             </div>
             <div class="doc-row">
               <code>t s ;;</code>
-              <span>Applies function type <code>t</code> to argument type <code>s</code>.</span>
+              <span>Applies function type <code>t</code> to argument type <code>s</code>. For arity 2 or higher, apply with <code>t (s1, s2) ;;</code>.</span>
             </div>
             <div class="doc-row">
               <code>t[s] ;;</code>
@@ -443,6 +444,7 @@
       ["Boolean tuple", "type pair = {boolean(), boolean} ;;\n{false, true} <= pair ;;"],
       ["Open tuple", "{integer, boolean} <= {integer, ...} ;;"],
       ["Function apply", "(integer() -> boolean -> integer()) integer boolean() ;;"],
+      ["Multi-arity apply", "((integer, integer) -> integer) (integer, integer) ;;"],
       ["Map projection", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[atom()] ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
       ["Domain map", "%{atom() => integer()} ;;"],
