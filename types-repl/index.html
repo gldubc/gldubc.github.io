@@ -431,6 +431,14 @@
               <span>Tests gradual precision. <code>a &lt;~= b</code> is accepted as the same relation.</span>
             </div>
             <div class="doc-row">
+              <code>a &lt;=~ b ;;</code>
+              <span>Tests consistent subtyping, defined as <code>lower(a) &lt;= upper(b)</code>.</span>
+            </div>
+            <div class="doc-row">
+              <code>a ~&lt;= b ;;</code>
+              <span>Tests Elixir compatibility from left to right.</span>
+            </div>
+            <div class="doc-row">
               <code>t s ;;</code>
               <span>Applies function type <code>t</code> to argument type <code>s</code>. Define multi-arity functions with <code>(s1, s2 -&gt; ret)</code> and apply with <code>t (s1, s2) ;;</code>.</span>
             </div>
@@ -475,6 +483,8 @@
       ["Map access", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[:foo] ;;"],
       ["Field select", "%{foo: integer, bar: boolean}.foo ;;\n%{foo: integer}.bar ;;"],
       ["Precision relation", "dynamic() <~ dynamic(integer()) ;;\ndynamic(integer()) <~ dynamic() ;;"],
+      ["Consistent subtype", "dynamic(integer()) <=~ atom() ;;\ninteger() <=~ dynamic(atom()) ;;"],
+      ["Compatibility", "integer() ~<= number() ;;\nnumber() ~<= integer() ;;"],
       ["Precision", "precise? {x, y} when x == y ;;\nprecise? x when is_integer(x) ;;"],
       ["Lists", "list() ;;\nlist(integer, binary) ;;\nnon_empty_list(integer, binary) ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
