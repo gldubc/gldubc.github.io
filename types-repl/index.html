@@ -422,7 +422,7 @@
             </div>
             <div class="doc-row">
               <code>t[s] ;;</code>
-              <span>Projects the value type for map keys matching type <code>s</code>.</span>
+              <span>Models Elixir <code>map[key]</code> access; the result includes <code>nil</code> when a key can be absent.</span>
             </div>
             <div class="doc-row">
               <code>a or b</code>
@@ -445,7 +445,7 @@
       ["Open tuple", "{integer, boolean} <= {integer, ...} ;;"],
       ["Function apply", "(integer() -> boolean -> integer()) integer boolean() ;;"],
       ["Multi-arity apply", "((integer, integer) -> integer) (integer, integer) ;;"],
-      ["Map projection", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[atom()] ;;"],
+      ["Map access", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[:foo] ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
       ["Domain map", "%{atom() => integer()} ;;"],
       ["Operators", "integer or atom ;;\ninteger and not integer ;;\ninteger and not atom ;;\nnot integer and integer ;;"]
