@@ -439,6 +439,10 @@
               <span>Models Elixir <code>map[key]</code> access; the result includes <code>nil</code> when a key can be absent.</span>
             </div>
             <div class="doc-row">
+              <code>t.a ;;</code>
+              <span>Selects required map/record field <code>:a</code>; this errors when the field is absent or optional.</span>
+            </div>
+            <div class="doc-row">
               <code>precise? head ;;</code>
               <span>Checks pattern and guard precision, as in <code>precise? {x, y} when x == y ;;</code>.</span>
             </div>
@@ -465,6 +469,7 @@
       ["Function apply", "(integer() -> boolean -> integer()) integer boolean() ;;"],
       ["Multi-arity apply", "(integer, integer -> integer) (integer, integer) ;;"],
       ["Map access", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[:foo] ;;"],
+      ["Field select", "%{foo: integer, bar: boolean}.foo ;;\n%{foo: integer}.bar ;;"],
       ["Precision", "precise? {x, y} when x == y ;;\nprecise? x when is_integer(x) ;;"],
       ["Lists", "list() ;;\nlist(integer, binary) ;;\nnon_empty_list(integer, binary) ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
