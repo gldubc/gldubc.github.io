@@ -314,6 +314,16 @@
       line-height: 1.45;
     }
 
+    .doc-note a {
+      color: var(--violet);
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .doc-note a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 860px) {
       header {
         align-items: flex-start;
@@ -418,11 +428,19 @@
             </div>
             <div class="doc-row">
               <code>t s ;;</code>
-              <span>Applies function type <code>t</code> to argument type <code>s</code>. For arity 2 or higher, apply with <code>t (s1, s2) ;;</code>.</span>
+              <span>Applies function type <code>t</code> to argument type <code>s</code>. Define multi-arity functions with <code>(s1, s2 -&gt; ret)</code> and apply with <code>t (s1, s2) ;;</code>.</span>
+            </div>
+            <div class="doc-row">
+              <code>list(t, tail)</code>
+              <span>List aliases are <code>list()</code>, <code>list(t)</code>, and <code>list(t, tail)</code>; non-empty lists use <code>non_empty_list(t)</code> or <code>non_empty_list(t, tail)</code>.</span>
             </div>
             <div class="doc-row">
               <code>t[s] ;;</code>
               <span>Models Elixir <code>map[key]</code> access; the result includes <code>nil</code> when a key can be absent.</span>
+            </div>
+            <div class="doc-row">
+              <code>precise? head ;;</code>
+              <span>Checks pattern and guard precision, as in <code>precise? {x, y} when x == y ;;</code>.</span>
             </div>
             <div class="doc-row">
               <code>a or b</code>
@@ -432,6 +450,7 @@
               <code>{integer, ...}</code>
               <span>Open tuple syntax. Maps use <code>%{foo: integer}</code>, <code>%{..., foo: integer}</code>, or <code>%{atom() =&gt; integer()}</code>.</span>
             </div>
+            <div class="doc-note"><a href="https://elixir.hexdocs.pm/main/types-cheat.html" target="_blank" rel="noopener noreferrer">Types cheatsheet</a></div>
             <div class="doc-note">Use Ctrl+Enter, or Cmd+Enter on macOS, to run the input.</div>
           </div>
         </section>
@@ -444,8 +463,10 @@
       ["Boolean tuple", "type pair = {boolean(), boolean} ;;\n{false, true} <= pair ;;"],
       ["Open tuple", "{integer, boolean} <= {integer, ...} ;;"],
       ["Function apply", "(integer() -> boolean -> integer()) integer boolean() ;;"],
-      ["Multi-arity apply", "((integer, integer) -> integer) (integer, integer) ;;"],
+      ["Multi-arity apply", "(integer, integer -> integer) (integer, integer) ;;"],
       ["Map access", "%{foo: integer, bar: boolean}[:foo] ;;\n%{atom() => integer()}[:foo] ;;"],
+      ["Precision", "precise? {x, y} when x == y ;;\nprecise? x when is_integer(x) ;;"],
+      ["Lists", "list() ;;\nlist(integer, binary) ;;\nnon_empty_list(integer, binary) ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
       ["Domain map", "%{atom() => integer()} ;;"],
       ["Operators", "integer or atom ;;\ninteger and not integer ;;\ninteger and not atom ;;\nnot integer and integer ;;"]
