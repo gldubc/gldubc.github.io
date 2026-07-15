@@ -382,7 +382,8 @@
 %{foo: term()} and %{..., foo: term(), bar: term()} ;;
 ((integer, integer) -> integer) (integer, integer) ;;
 %{foo: integer, bar: boolean}[:foo] ;;
-(integer() -> boolean -> integer()) integer boolean() ;;</textarea>
+(integer() -> boolean -> integer()) integer boolean() ;;
+[ a <= integer() ; integer() <= a ] ;;</textarea>
         <div class="examples" id="examples"></div>
       </section>
 
@@ -439,6 +440,14 @@
               <span>Tests Elixir compatibility from left to right.</span>
             </div>
             <div class="doc-row">
+              <code>{a, a} when a: term() ;;</code>
+              <span>Introduces local type variable <code>a</code>. A narrower bound, such as <code>a: integer()</code>, intersects every occurrence of <code>a</code> with that bound.</span>
+            </div>
+            <div class="doc-row">
+              <code>[a &lt;= s ; t &lt;= a] ;;</code>
+              <span>Tallies subtype constraints and prints principal substitutions. Unknown lowercase identifiers inside brackets are type variables; separate constraints with semicolons.</span>
+            </div>
+            <div class="doc-row">
               <code>t s ;;</code>
               <span>Applies function type <code>t</code> to argument type <code>s</code>. Define multi-arity functions with <code>(s1, s2 -&gt; ret)</code> and apply with <code>t (s1, s2) ;;</code>.</span>
             </div>
@@ -485,6 +494,8 @@
       ["Precision relation", "dynamic() <~ dynamic(integer()) ;;\ndynamic(integer()) <~ dynamic() ;;"],
       ["Consistent subtype", "dynamic(integer()) <=~ atom() ;;\ninteger() <=~ dynamic(atom()) ;;"],
       ["Compatibility", "integer() ~<= number() ;;\nnumber() ~<= integer() ;;"],
+      ["Type variables", "{a, a} when a: term() ;;\n{a, a} when a: integer() ;;"],
+      ["Tallying", "[ a <= integer() ] ;;\n[ a <= integer() ; integer() <= a ] ;;"],
       ["Precision", "precise? {x, y} when x == y ;;\nprecise? x when is_integer(x) ;;"],
       ["Lists", "list() ;;\nlist(integer, binary) ;;\nnon_empty_list(integer, binary) ;;"],
       ["Map clash", "%{foo: term()} and %{..., foo: term(), bar: term()} ;;"],
